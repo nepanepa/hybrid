@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>canvas - part 16 - mouseover and out</title>
+</head>
+
+<style>
+
+    #canvas
+    {
+        border: 5px solid black;
+        background-size: 100%;
+    }
+</style>
+
+<script>
+
+    window.onload = function()
+    {
+        canvasEvent();
+    }
+
+    function canvasEvent()
+    {
+        var c=document.getElementById("canvas");
+        var ctx=c.getContext("2d");
+        ctx.rect(0,0,300,300);
+        ctx.stroke();
+
+        c.addEventListener("mouseover", hover, false);
+        c.addEventListener("mouseout", hoverOut, false);
+    }
+
+    function hover(e)
+    {
+        var c=document.getElementById("canvas");
+        var ctx=c.getContext("2d")
+        ctx.fillStyle = 'red';
+        ctx.fill ();
+    }
+
+    function hoverOut(e)
+    {
+        var c=document.getElementById("canvas");
+        var ctx=c.getContext("2d")
+        ctx.fillStyle = 'green';
+        ctx.fill ();
+    }
+</script>
+<body>
+<center>
+<canvas id="canvas" width="300" height="300">
+    Canvas not suppoted
+</canvas>
+</center>
+</body>
+</html>
+
