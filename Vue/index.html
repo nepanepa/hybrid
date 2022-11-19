@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    
+    <script src = "http://unpkg.com/vue@3"> </script>
+    <div id="app">
+        <button @click="loveCount++;">고백</button>
+        <p>{{boy}}가 {{girl}}에게 <b v-html=""></b>....{{loveCount}}번 차였다...</p>
+    </div>
+    
+    <script>
+        const {createApp} = Vue;
+        createApp({
+            data(){ 
+                return{
+                 boy: "현규",
+                 girl: "...",
+                 loveCount: 0,
+                 style:<span style = "color:red,">고백</span>
+                }
+            },
+            mounted(){
+                loveCount ++;
+                console.log ("마운트");
+            }
+        }).mount("#app");
+    </script>
+</body>
+</html>
