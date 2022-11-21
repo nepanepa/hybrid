@@ -1,0 +1,3 @@
+#content > div { display: none; }
+#content .on{ display: block; }
+#gamearea{ width:400px; height:400px;}

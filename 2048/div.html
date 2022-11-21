@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #app
+        {
+            width: 582px;
+            height: 582px;
+            background-color: beige;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            grid-gap: 10px;
+            padding: 10px;
+        }
+        .bg_round{
+            background-color: burlywood;
+        }
+    </style>
+    <div id = "app">
+        <div class = "bg_round"></div>
+        <div class = "bg_round"></div>
+        <div class = "bg_round"></div>
+        <div class = "bg_round"></div>
+        <div class = "bg_round"></div>
+        <div class = "bg_round"></div>
+        <div class = "bg_round"></div>
+        <div class = "bg_round"></div>
+        <div class = "bg_round"></div>
+        <div class = "bg_round"></div>
+        <div class = "bg_round"></div>
+        <div class = "bg_round"></div>
+        <div class = "bg_round"></div>
+        <div class = "bg_round"></div>
+        <div class = "bg_round"></div>
+        <div class = "bg_round"></div>
+    </div>
+
+    <div id = "app">
+        <div class = "bg_block" v-for = "index in bg_block_count">{{index}}</div>
+    </div>
+
+    <script>
+        const {createApp} = Vue;
+        createApp({
+            data() {
+                return {
+                    bg_block_count : 16,
+                }
+            },
+            mounted(){
+                console.log("app 마운트 성공!");
+            }
+        }).mount("#app")
+    </script>
+</body>
+</html>
